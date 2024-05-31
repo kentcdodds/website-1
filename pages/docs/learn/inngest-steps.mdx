@@ -85,7 +85,7 @@ export default inngest.createFunction(
   { event: "app/reminder.scheduled" },
   async ({ event, step }) => {
     const date = new Date(event.data.remind_at);
-    await step.sleepUntil("wait-for-the-date", date);
+    await step.sleepUntil("wait-for-scheduled-reminder", date);
     // Do something else
   }
 );
